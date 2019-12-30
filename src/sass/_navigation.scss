@@ -1,0 +1,114 @@
+@import "./logo";
+.nav {
+  background-color: #234c96;
+  display: flex;
+  align-items: center;
+  color: white;
+  justify-content: space-around;
+  &_left {
+    display: flex;
+    &__brand-name {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+  }
+  &_left {
+    display: flex;
+    align-items: center;
+  }
+  &_link {
+    display: flex;
+    &__item {
+      color: white;
+      text-decoration: none;
+      list-style: none;
+      padding: 0 1rem;
+      font-size: 1.6rem;
+    }
+  }
+  &_right {
+    display: flex;
+    align-items: center;
+    &__icon {
+      font-size: 2.6rem;
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+    }
+  }
+  .container_small {
+    display: none;
+    position: relative;
+    .toggler {
+      position: fixed;
+      right: 40px;
+      z-index: 6;
+      top: 15px;
+      display: none;
+      margin-left: auto;
+    }
+    .nav_small {
+      background-color: hsl(200, 10%, 94%);
+      box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.2);
+      position: fixed;
+      top: 20px;
+      right: 54px;
+      z-index: 5;
+      transform: scale(0);
+      // transform-origin: top right;
+      animation: bounce-out 1000ms ease-in-out 100ms;
+      animation-fill-mode: forwards;
+      .small-lists {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        transition: all 2s;
+        .small-list {
+          padding: 1rem;
+          text-decoration: none;
+          color: black;
+        }
+      }
+    }
+  }
+}
+@keyframes bounce-out {
+  0% {
+    transform: scale(0);
+  }
+  75% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .nav {
+    justify-content: space-between;
+  }
+  .nav_middle,
+  .nav_right {
+    display: none;
+  }
+  .nav .container_small {
+    display: block;
+    .toggler {
+      display: block;
+      font-family: inherit;
+      background-color: white;
+      padding: 0.5rem;
+      border: none;
+      box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.2);
+      outline: none;
+    }
+  }
+}
