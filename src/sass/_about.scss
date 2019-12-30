@@ -1,0 +1,39 @@
+.about_container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 15rem 5rem;
+  grid-gap: 10rem;
+  .about_right {
+    // background-color: violet;
+    display: flex;
+    justify-content: center;
+    &__main {
+      width: 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url("../images/about.png");
+      transform: translateX(175px);
+      position: relative;
+      &::after {
+        content: url("../images/pattern.png");
+        display: inline-block;
+        position: absolute;
+        top: 125px;
+        left: 390px;
+        width: 100%;
+      }
+    }
+    &__desc {
+      line-height: 1.6;
+      background-color: white;
+      align-self: flex-end;
+      transform: translate(-100px, -50px);
+      padding: 3rem;
+      border-radius: 10px;
+      text-align: center;
+      -webkit-box-shadow: 20px 20px 40px 0px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: 20px 20px 40px 0px rgba(0, 0, 0, 0.1);
+      box-shadow: 20px 20px 40px 0px rgba(0, 0, 0, 0.1);
+    }
+  }
+}

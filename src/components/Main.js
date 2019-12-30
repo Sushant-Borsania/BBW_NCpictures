@@ -1,9 +1,11 @@
 import React from 'react'
-
+import Hero from './Hero';
+import About from './About'
 export default function Main() {
   return (
-    <div>
-      Main
-    </div>
+    <React.Fragment>
+      <Hero />
+      <About />
+    </React.Fragment>
   )
 }

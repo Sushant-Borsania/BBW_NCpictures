@@ -1,0 +1,37 @@
+.hero {
+  height: 90vh;
+  // width: 100%;
+  background-image: url("../images/Hero_2.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &_mainLine {
+    font-size: 20rem;
+    font-family: "Mrs Sheppards", cursive;
+    color: white;
+  }
+  &_tagline {
+    color: white;
+    font-size: 2.5rem;
+    // margin-top: 4.5rem;
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .hero {
+    &_mainLine {
+      font-size: 12rem;
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .hero {
+    &_mainLine {
+      font-size: 8rem;
+    }
+  }
+}
