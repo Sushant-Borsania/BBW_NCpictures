@@ -1,0 +1,10 @@
+.services_container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 15rem 5rem;
+  grid-gap: 10rem;
+  @media screen and (max-width: 770px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
+}

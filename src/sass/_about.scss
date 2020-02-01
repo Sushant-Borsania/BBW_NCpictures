@@ -3,37 +3,51 @@
   grid-template-columns: 1fr 2fr;
   padding: 15rem 5rem;
   grid-gap: 10rem;
+  @media screen and (max-width: 770px){
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
   .about_right {
-    // background-color: violet;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
     &__main {
-      width: 100%;
-      background-size: contain;
+      grid-area: 1 / 1 / 5 / 2;
+      
+      width: 90%;
+      height: 100%;
+      background-size: cover;
+      background-position: top center;
       background-repeat: no-repeat;
-      background-image: url("../images/about.png");
-      transform: translateX(175px);
+      background-image: url(/static/media/about.b6c4a1df.png);
       position: relative;
-      &::after {
+      &::before {
         content: url("../images/pattern.png");
         display: inline-block;
         position: absolute;
-        top: 125px;
-        left: 390px;
-        width: 100%;
+        top: 200px;
+        right: -50px;
+        @media screen and (max-width: 770px){
+          top: 100px;
+        } 
+        
       }
     }
     &__desc {
+      grid-area: 4 / 1 / 4 / 2;
+      max-width: 35rem;
       line-height: 1.6;
       background-color: white;
-      align-self: flex-end;
-      transform: translate(-100px, -50px);
       padding: 3rem;
       border-radius: 10px;
       text-align: center;
       -webkit-box-shadow: 20px 20px 40px 0px rgba(0, 0, 0, 0.1);
       -moz-box-shadow: 20px 20px 40px 0px rgba(0, 0, 0, 0.1);
       box-shadow: 20px 20px 40px 0px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+      justify-self: end;
     }
   }
 }
